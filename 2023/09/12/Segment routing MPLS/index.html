@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Segment Routing MPLS基本原理基本概念Segment Routing MPLS特性涉及的概念如下：  SR域（Segment Routing Domain）：SR节点的集合。 SID：即Segment ID，用来标识唯一的段。在转发层面，可以映射为MPLS标签。 SRGB（Segment Routing Global Block）：用户指定的为Segment Routing MP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Segment routingMPLS">
+<meta property="og:url" content="http://example.com/2023/09/12/Segment%20routing%20MPLS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Segment Routing MPLS基本原理基本概念Segment Routing MPLS特性涉及的概念如下：  SR域（Segment Routing Domain）：SR节点的集合。 SID：即Segment ID，用来标识唯一的段。在转发层面，可以映射为MPLS标签。 SRGB（Segment Routing Global Block）：用户指定的为Segment Routing MP">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://download.huawei.com/mdl/image/download?uuid=44248c67db3f44c2a4471ebeef0dbfa8">
+<meta property="og:image" content="https://download.huawei.com/mdl/image/download?uuid=69ee5dab8b334659b9256f903e89765d">
+<meta property="og:image" content="https://download.huawei.com/mdl/image/download?uuid=7beb5db96a3b45b796ddb8535651372a">
+<meta property="og:image" content="https://download.huawei.com/mdl/image/download?uuid=09355c492a384fc5b9935ccc780c385b">
+<meta property="article:published_time" content="2023-09-12T07:59:58.000Z">
+<meta property="article:modified_time" content="2024-01-05T07:50:09.011Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://download.huawei.com/mdl/image/download?uuid=44248c67db3f44c2a4471ebeef0dbfa8">
+  
+  
+  
+  <title>Segment routingMPLS - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Segment routingMPLS"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-12 15:59" pubdate>
+          September 12, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Segment routingMPLS</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Segment-Routing-MPLS基本原理"><a href="#Segment-Routing-MPLS基本原理" class="headerlink" title="Segment Routing MPLS基本原理"></a>Segment Routing MPLS基本原理</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>Segment Routing MPLS特性涉及的概念如下：</p>
+<ul>
+<li>SR域（Segment Routing Domain）：SR节点的集合。</li>
+<li>SID：即Segment ID，用来标识唯一的段。在转发层面，可以映射为MPLS标签。</li>
+<li>SRGB（Segment Routing Global Block）：用户指定的为Segment Routing MPLS预留的全局标签集合。</li>
+<li>SRLB（Segment Routing Local Block）：用户指定的为Segment Routing MPLS预留的本地标签集合。这些标签在本地配置，仅在本地有效，但是会通过IGP对外发布，所以是全局可见。SRLB当前主要用于配置<a target="_blank" rel="noopener" href="https://support.huawei.com/enterprise/zh/doc/EDOC1000173014/3ee10304#ZH-CN_CONCEPT_0172355658">Binding SID</a>。</li>
+</ul>
+<h3 id="Segment分类"><a href="#Segment分类" class="headerlink" title="Segment分类"></a>Segment分类</h3><p><strong>表1-1</strong> Segment分类</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>生成方式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Prefix Segment（前缀段）</td>
+<td>手工配置。</td>
+<td>Prefix Segment用于标识网络中的某个目的地址前缀（Prefix）。Prefix Segment通过IGP协议扩散到其他网元，全局可见，全局有效。Prefix Segment通过Prefix Segment ID（SID）标识。Prefix SID是源端发布的SRGB范围内的偏移值，接收端会根据自己的SRGB计算实际标签值用于生成MPLS转发表项。</td>
+</tr>
+<tr>
+<td>Adjacency Segment（邻接段）</td>
+<td>源节点通过协议动态分配。也可以手工配置。</td>
+<td>Adjacency Segment用于标识网络中的某个邻接。Adjacency Segment通过IGP协议扩散到其他网元，全局可见，本地有效。Adjacency Segment通过Adjacency Segment ID（SID）标识。Adjacency SID为SRGB范围外的本地SID。</td>
+</tr>
+<tr>
+<td>Node Segment（节点段）</td>
+<td>手工配置。</td>
+<td>Node Segment是特殊的Prefix Segment，用于标识特定的节点（Node）。在节点的Loopback接口下配置IP地址作为前缀，这个节点的Prefix SID实际就是Node SID。</td>
+</tr>
+</tbody></table>
+<p>Prefix SID、Adjacency SID和Node SID的示例如<a target="_blank" rel="noopener" href="https://support.huawei.com/enterprise/zh/doc/EDOC1000173014/3ee10304#ZH-CN_CONCEPT_0161511638_mMcCpPsS_fig2">图1-2</a>所示。</p>
+<p><strong>图1-2</strong> Prefix SID、Adjacency SID和Node SID<br><img src="https://download.huawei.com/mdl/image/download?uuid=44248c67db3f44c2a4471ebeef0dbfa8" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>通俗的理解，Prefix SID代表目的地址，Adjacency SID代表数据包的外发链路，可以分别类似于传统IP转发中的目的IP地址和出接口。在IGP区域内，网元设备使用扩展IGP消息将自身的Node SID以及Adjacency SID进行泛洪，这样任意一个网元都可以获得其他网元的信息。</p>
+<p>通过按序组合前缀（节点）SID和邻接SID，可以构建出网络内的任何路径。在路径中的每一跳，使用栈顶段信息区分下一跳。段信息按照顺序堆叠在数据头的顶部。当栈顶段信息包含另一个节点的标识时，接收节点使用等价多路径（ECMP）将数据包转发到下一跳。当栈顶段信息是本节点的标识时，接收节点弹出顶部段并执行下一个段所需的任务。</p>
+<p><strong>Prefix SID</strong></p>
+<p>基于Prefix SID的转发路径是由IGP通过最短路径算法（SPF）计算得出。如<a target="_blank" rel="noopener" href="https://support.huawei.com/enterprise/zh/doc/EDOC1000173014/3ee10304#fig_dc_vrp_sr_all_feature_000802">图1-3</a>所示，以节点Z为目的节点，其Prefix SID是100，通过IGP扩散之后，整个IGP域的所有设备学习到节点Z的Prefix SID，之后都会使用SPF算法得出一条到节点Z的最短路径（Shortest Path），也即开销最小路径。</p>
+<p><strong>图1-3</strong> 基于Prefix SID的转发路径<br><img src="https://download.huawei.com/mdl/image/download?uuid=69ee5dab8b334659b9256f903e89765d" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>如果网络中存在等价路径，则可以实现负载分担（ECMP）；如果存在不等价路径，则可以形成链路备份。由此可见，基于Prefix SID的转发路径并不是一条固定路径，头节点也无法控制报文的整条转发路径。</p>
+<p><strong>Adjacency SID</strong></p>
+<p>如<a target="_blank" rel="noopener" href="https://support.huawei.com/enterprise/zh/doc/EDOC1000173014/3ee10304#fig_dc_vrp_sr_all_feature_000803">图1-4</a>所示，通过给网络中每个邻接分配一个Adjacency SID，然后在头节点定义一个包含多个Adjacency SID的Segment List，就可以严格指定任意一条显式路径（Strict Explicit）。这种方式可以更好的配合实现SDN。</p>
+<p><strong>图1-4</strong> 基于Adjacency SID的转发路径<br><img src="https://download.huawei.com/mdl/image/download?uuid=7beb5db96a3b45b796ddb8535651372a" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><strong>Adjacency SID + Node SID</strong></p>
+<p>如<a target="_blank" rel="noopener" href="https://support.huawei.com/enterprise/zh/doc/EDOC1000173014/3ee10304#fig_dc_vrp_sr_all_feature_000804">图1-5</a>所示，这种方式是将Adjacency SID和Node SID结合，通过Adjacency SID，可以强制整条路径包含某一个邻接。而对于Node SID，节点可以使用SPF算法计算最短路径，也可以负载分担。这种方式的路径并不是严格固定，所以也称作松散路径（Loose Explicit）。</p>
+<p><strong>图1-5</strong> 基于Adjacency SID + Node SID的转发路径<br><img src="https://download.huawei.com/mdl/image/download?uuid=09355c492a384fc5b9935ccc780c385b" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="Segment-Routing转发机制"><a href="#Segment-Routing转发机制" class="headerlink" title="Segment Routing转发机制"></a>Segment Routing转发机制</h3><p>Segment Routing可以直接应用在MPLS架构，转发机制没有变化。代表段的SID被编码为MPLS标签。段序列被编码为标签栈。要处理的段位于栈顶。一个段处理完成后，相关标签从标签栈中弹出。</p>
+<p>基于MPLS转发机制的SR，通常也称为SR-MPLS。</p>
+<h3 id="Segment-Routing标签冲突处理原则"><a href="#Segment-Routing标签冲突处理原则" class="headerlink" title="Segment Routing标签冲突处理原则"></a>Segment Routing标签冲突处理原则</h3><p>由于Prefix SID通过手工配置生成，不同设备上的配置可能发生标签冲突。标签冲突分为前缀冲突和SID冲突，前缀冲突是指相同的前缀关联了两个不同的SID，SID冲突是指相同的SID关联到不同的前缀。</p>
+<p>标签冲突处理原则：当冲突产生后，优先处理前缀冲突，之后根据处理结果再进行SID冲突处理，并按如下规则进行优选。</p>
+<ol>
+<li>前缀掩码更大者优选；</li>
+<li>前缀更小者优选；</li>
+<li>SID更小者优选。</li>
+</ol>
+<p>假如现在有如下四条路由(前缀&#x2F;掩码 SID)：</p>
+<ul>
+<li>a. 1.1.1.1&#x2F;32 1</li>
+<li>b. 1.1.1.1&#x2F;32 2</li>
+<li>c. 2.2.2.2&#x2F;32 3</li>
+<li>d. 3.3.3.3&#x2F;32 1</li>
+</ul>
+<p>使用冲突处理原则后效果如下：</p>
+<ol>
+<li>先进行前缀冲突处理，a和b为前缀冲突，根据标签冲突处理原则，a的SID比b的SID小，优选a，则处理后：<ul>
+<li>a. 1.1.1.1&#x2F;32 1</li>
+<li>c. 2.2.2.2&#x2F;32 3</li>
+<li>d. 3.3.3.3&#x2F;32 1</li>
+</ul>
+</li>
+<li>再根据上一步处理结果进行SID冲突处理，a和d为SID冲突，根据标签冲突处理原则，a的前缀比d的前缀小，优选a。冲突解决后，最终优选出两条路由：<ul>
+<li>a. 1.1.1.1&#x2F;32 1</li>
+<li>c. 2.2.2.2&#x2F;32 3</li>
+</ul>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Segment routingMPLS</div>
+      <div>http://example.com/2023/09/12/Segment routing MPLS/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 12, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/10/10/git%E4%BD%BF%E7%94%A8/" title="git使用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">git使用</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/11/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84TCP%E4%BB%A3%E7%90%86/" title="一个简单的TCP代理">
+                        <span class="hidden-mobile">一个简单的TCP代理</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
