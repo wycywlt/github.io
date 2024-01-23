@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>软件打开</title>
+    <link href="/2024/01/23/%E8%BD%AF%E4%BB%B6%E6%89%93%E5%BC%80/"/>
+    <url>/2024/01/23/%E8%BD%AF%E4%BB%B6%E6%89%93%E5%BC%80/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>aws名词解释</title>
+    <link href="/2024/01/17/aws%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"/>
+    <url>/2024/01/17/aws%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/</url>
+    
+    <content type="html"><![CDATA[<h1 id="IAM"><a href="#IAM" class="headerlink" title="IAM"></a>IAM</h1><p>AWS Identity and Access Management (IAM) 是一种 Web 服务，可以帮助您安全地控制对 AWS 资源的访问。借助 IAM，您可以集中管理控制用户可访问哪些 AWS 资源的权限。可以使用 IAM 来控制谁通过了身份验证（准许登录）并获得授权（拥有权限）来使用资源。</p><p>当您创建 AWS 账户时，最初使用的是一个对账户中所有 AWS 服务和资源拥有完全访问权限的登录身份。此身份称为 AWS 账户<em>根用户</em>，使用您创建账户时所用的电子邮件地址和密码登录，即可获得该身份。强烈建议您不要使用根用户执行日常任务。保护好根用户凭证，并使用这些凭证来执行仅根用户可以执行的任务。有关需要您以根用户身份登录的任务的完整列表，请参阅</p><h1 id="Amazon-S3"><a href="#Amazon-S3" class="headerlink" title="Amazon S3"></a>Amazon S3</h1><p>Amazon Simple Storage Service（Amazon S3）是一种对象存储服务，提供行业领先的可扩展性、数据可用性、安全性和性能。各种规模和行业的客户都可以使用 Amazon S3 存储和保护任意数量的数据，用于数据湖、网站、移动应用程序、备份和恢复、归档、企业应用程序、IoT 设备和大数据分析。Amazon S3 提供了管理功能，使您可以优化、组织和配置对数据的访问，以满足您的特定业务、组织和合规性要求。</p><h1 id="AWS-DataSync"><a href="#AWS-DataSync" class="headerlink" title="AWS DataSync"></a>AWS DataSync</h1><p>AWS DataSync是一项在线数据移动和发现服务，可简化数据迁移，并帮助您在AWS存储服务之间快速、轻松、安全地传输文件或对象数据。</p><p>DataSync使用以下存储系统和服务：</p><ul><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-nfs-location.html">网络文件系统（NFS）</a>文件服务器</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-smb-location.html">服务器消息块（SMB）</a>文件服务器</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-hdfs-location.html">Hadoop Distributed File</a></li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-object-location.html">对象存储</a>系统</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-s3-location.html">Amazon S3</a> 存储桶</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-efs-location.html">亚马逊 EFS</a> 文件系统</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-fsx-location.html">Amazon FSx for Windows File Server 文件</a>系统</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-lustre-location.html">Amazon FSx for Lustre</a></li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-openzfs-location.html">Amazon FSx for OpenZ</a> FS 文件系统</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/create-ontap-location.html">适用于 NetApp ONTAP 文件系统的亚马逊 FSx</a></li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/tutorial_transfer-google-cloud-storage.html">Good Storag</a> e</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/creating-azure-blob-location.html">微软 Azure Bloud Storag</a> e</li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/transferring-azure-files.html">微软 Azure 文件</a></li><li>AWS Snowball Edge设备@@ <a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/s3-compatible-storage-snow.html">上兼容Amazon S3 的存储</a></li><li><a href="https://docs.aws.amazon.com/zh_cn/datasync/latest/userguide/nfs-on-snowcone.html">AWS Snowcone</a> 设备</li></ul><h1 id="Amazon-EventBridge"><a href="#Amazon-EventBridge" class="headerlink" title="Amazon EventBridge"></a>Amazon EventBridge</h1><p>使用 Kinesis 数据流，您可以将 AWS API 调用<a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-events.html">事件</a>发送EventBridge到数据流、构建消费者应用程序和处理大量数据。您还可以在 Pipes 中使用 Kinesis Data Streams 作为 Pipes 中的EventBridge目标，并在可选的筛选和丰富后将记录传送到来自可用源之一的流中。</p><p>有关更多信息，请参阅亚马逊<em>EventBridge用户指南</em>中的<a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-relay-events-kinesis-stream.html">将事件发送到亚马逊 Kinesis 直播</a>和<a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">EventBridge管道</a>。</p><h1 id="Amazon-ECS"><a href="#Amazon-ECS" class="headerlink" title="Amazon ECS"></a><strong>Amazon ECS</strong></h1><p>Amazon Elastic Container Service（ECS）是一项完全托管的容器编排服务，可帮助您更有效地部署、管理和扩展容器化的应用程序。它与 AWS 环境深度集成，提供易于使用的解决方案，用于在云端和本地运行容器工作负载，并通过 Amazon ECS Anywhere 提供高级安全功能。</p><h1 id="Amazon-Elastic-File-System（Amazon-EFS）"><a href="#Amazon-Elastic-File-System（Amazon-EFS）" class="headerlink" title="Amazon Elastic File System（Amazon EFS）"></a>Amazon Elastic File System（Amazon EFS）</h1><p>Amazon Elastic File System（Amazon EFS）提供无服务器的完全弹性文件存储，因此，您无需预置或管理存储容量和性能，即可共享文件数据。Amazon EFS 可在不中断应用程序的情况下按需扩展到 PB 级，并且在您添加和删除文件时会自动增长和缩小。由于 Amazon EFS 具有简单的 Web 服务接口，因此您可以快速轻松地创建和配置文件系统。该服务为您管理所有文件存储基础设施，这意味着您可以避免部署、修补和维护复杂文件系统配置的复杂性。</p><p>Amazon EFS 支持网络文件系统版本 4（NFSv4.1 和 NFSv4.0）协议，因此您目前使用的应用程序和工具可与 Amazon EFS 无缝协作。多个计算实例，包括 Amazon EC2、Amazon ECS 和AWS Lambda，可以同时访问一个 Amazon EFS 文件系统。因此，EFS 文件系统可以为在多个计算实例或服务器上运行的工作负载和应用程序提供通用数据源。</p><h1 id="Amazon-EMR-Serverless"><a href="#Amazon-EMR-Serverless" class="headerlink" title="Amazon EMR Serverless"></a>Amazon EMR Serverless</h1><p>Amazon EMR Serverless 是 Amazon EMR 中的一个新选项，它使数据工程师和分析师能够轻松且成本高效地运行使用开源大数据框架（例如 Apache Spark、Hive 或 Presto）构建的应用程序，而无需调整、运营、优化、保护或管理集群。</p><h2 id="使用案例"><a href="#使用案例" class="headerlink" title="使用案例"></a>使用案例</h2><h3 id="执行大数据分析"><a href="#执行大数据分析" class="headerlink" title="执行大数据分析"></a>执行大数据分析</h3><p>使用统计算法和预测性模型运行大规模数据处理和 what-if 分析，发现隐藏的模式、相关性、市场趋势和客户偏好。</p><h3 id="构建可扩展的数据管道"><a href="#构建可扩展的数据管道" class="headerlink" title="构建可扩展的数据管道"></a>构建可扩展的数据管道</h3><p>从各种来源中提取数据、大规模处理数据，并将数据提供给应用程序和用户。</p><h3 id="处理实时数据流"><a href="#处理实时数据流" class="headerlink" title="处理实时数据流"></a>处理实时数据流</h3><p>实时分析来自流式数据源的事件，以创建长期运行、高度可用且具有容错能力的流式数据管道。</p><h3 id="加速数据科学和-ML-采用"><a href="#加速数据科学和-ML-采用" class="headerlink" title="加速数据科学和 ML 采用"></a>加速数据科学和 ML 采用</h3><p>使用 Apache Spark MLlib、TensorFlow 和 Apache MXNet 等开源 ML 框架。连接 Amazon SageMaker Studio 进行大型模型训练、分析和报告。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ubuntu22 Mysql GUI工具安装</title>
     <link href="/2024/01/09/ubuntu22-Mysql-GUI%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/"/>
     <url>/2024/01/09/ubuntu22-Mysql-GUI%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/</url>
