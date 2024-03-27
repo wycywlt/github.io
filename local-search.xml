@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>ubuntu22常用命令</title>
+    <link href="/2024/03/27/ubuntu22%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <url>/2024/03/27/ubuntu22%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<p>1 路由</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo ip route add <span class="hljs-selector-attr">[目标网络]</span> via <span class="hljs-selector-attr">[下一跳地址]</span> dev <span class="hljs-selector-attr">[出口网络接口]</span><br></code></pre></td></tr></table></figure><p>重启网络</p><figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nsis">sudo <span class="hljs-params">system</span>ctl restart <span class="hljs-params">system</span>d-networkd<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>wireshark抓包</title>
     <link href="/2024/03/22/wireshark%E6%8A%93%E5%8C%85/"/>
     <url>/2024/03/22/wireshark%E6%8A%93%E5%8C%85/</url>
