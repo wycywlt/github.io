@@ -16,12 +16,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="hexo简单使用 1&#x2F;&#x2F;创建hexo new &quot;f&quot;&#x2F;&#x2F;清理hexo clean&#x2F;&#x2F;构建静态文件hexo g&#x2F;&#x2F;上传至仓库hexo d    1 git基本使用 查看文件状态  1git status 两种颜色，红色代表工作区的文件，绿色代表缓存区   添加到缓存区123git add &#x27;&#x27;git add .git add -A &#x2F;&#x2F;使用-A参数表示暂存所有">
+    <meta name="description" content="hexo简单使用 1&#x2F;&#x2F;创建hexo new &quot;f&quot;&#x2F;&#x2F;清理hexo clean&#x2F;&#x2F;构建静态文件hexo g&#x2F;&#x2F;上传至仓库hexo d    1 git基本使用1.1查看文件状态1git status 两种颜色，红色代表工作区的文件，绿色代表缓存区  1.2 添加到缓存区123git add &#x27;&#x27;git add .git add -A &#x2F;&#x2F;使用-A参数表示暂">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git使用">
 <meta property="og:url" content="http://example.com/2023/10/10/git%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo简单使用 1&#x2F;&#x2F;创建hexo new &quot;f&quot;&#x2F;&#x2F;清理hexo clean&#x2F;&#x2F;构建静态文件hexo g&#x2F;&#x2F;上传至仓库hexo d    1 git基本使用 查看文件状态  1git status 两种颜色，红色代表工作区的文件，绿色代表缓存区   添加到缓存区123git add &#x27;&#x27;git add .git add -A &#x2F;&#x2F;使用-A参数表示暂存所有">
+<meta property="og:description" content="hexo简单使用 1&#x2F;&#x2F;创建hexo new &quot;f&quot;&#x2F;&#x2F;清理hexo clean&#x2F;&#x2F;构建静态文件hexo g&#x2F;&#x2F;上传至仓库hexo d    1 git基本使用1.1查看文件状态1git status 两种颜色，红色代表工作区的文件，绿色代表缓存区  1.2 添加到缓存区123git add &#x27;&#x27;git add .git add -A &#x2F;&#x2F;使用-A参数表示暂">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20231010163623191.png">
 <meta property="og:image" content="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20231010164020349.png">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20240105143029147.png">
 <meta property="og:image" content="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20231010165447548.png">
 <meta property="article:published_time" content="2023-10-10T08:24:42.000Z">
-<meta property="article:modified_time" content="2024-01-05T07:50:09.015Z">
+<meta property="article:modified_time" content="2024-04-25T03:27:10.714Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20231010163623191.png">
@@ -293,18 +293,13 @@
 
 
 
-<h1 id="1-git基本使用"><a href="#1-git基本使用" class="headerlink" title="1 git基本使用"></a>1 git基本使用</h1><ul>
-<li><h2 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h2></li>
-</ul>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git status</span><br></code></pre></td></tr></table></figure>
+<h1 id="1-git基本使用"><a href="#1-git基本使用" class="headerlink" title="1 git基本使用"></a>1 git基本使用</h1><h2 id="1-1查看文件状态"><a href="#1-1查看文件状态" class="headerlink" title="1.1查看文件状态"></a>1.1查看文件状态</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git status</span><br></code></pre></td></tr></table></figure>
 <p>两种颜色，红色代表工作区的文件，绿色代表缓存区</p>
 <p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20231010163623191.png" srcset="/img/loading.gif" lazyload alt="image-20231010163623191"></p>
-<ul>
-<li><h2 id="添加到缓存区"><a href="#添加到缓存区" class="headerlink" title="添加到缓存区"></a>添加到缓存区</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">add</span> <span class="hljs-string">&#x27;&#x27;</span><br>git <span class="hljs-keyword">add</span> .<br>git <span class="hljs-keyword">add</span> -A <span class="hljs-comment">//使用-A参数表示暂存所有已修改文件：</span><br></code></pre></td></tr></table></figure>
+<h2 id="1-2-添加到缓存区"><a href="#1-2-添加到缓存区" class="headerlink" title="1.2 添加到缓存区"></a>1.2 添加到缓存区</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">add</span> <span class="hljs-string">&#x27;&#x27;</span><br>git <span class="hljs-keyword">add</span> .<br>git <span class="hljs-keyword">add</span> -A <span class="hljs-comment">//使用-A参数表示暂存所有已修改文件：</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20231010164020349.png" srcset="/img/loading.gif" lazyload alt="image-20231010164020349"></p>
-</li>
-<li><h2 id="查看未暂存和已暂存的修改"><a href="#查看未暂存和已暂存的修改" class="headerlink" title="查看未暂存和已暂存的修改"></a>查看未暂存和已暂存的修改</h2><p>在工作区工作的时候，我们想要知道：</p>
+<h2 id="1-3-查看未暂存和已暂存的修改"><a href="#1-3-查看未暂存和已暂存的修改" class="headerlink" title="1.3 查看未暂存和已暂存的修改"></a>1.3 查看未暂存和已暂存的修改</h2><p>在工作区工作的时候，我们想要知道：</p>
 <ul>
 <li>当前做的哪些更新没有暂存？</li>
 <li>有哪些更新已经暂存起来准备下次提交？</li>
@@ -313,24 +308,18 @@
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git diff</span><br></code></pre></td></tr></table></figure>
 
 <p>该命令比较工作目录中和暂存区文件的差异，即：<strong>已经修改但还未暂存的内容</strong>，<strong>最后通过文件补丁的格式表明具体哪些行发生了变化</strong>。</p>
-</li>
-</ul>
 <p>​	在2.txt中添加文本，然后分别使用<code>git status</code>和<code>git diff</code>查看</p>
 <p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20240105105644820.png" srcset="/img/loading.gif" lazyload alt="image-20240105105644820"></p>
 <p>如果需要查看已经暂存起来的修改使用如下命令：</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">git diff <span class="hljs-comment">--staged</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20240105105915088.png" srcset="/img/loading.gif" lazyload alt="image-20240105105915088"></p>
-<ul>
-<li><h2 id="提交更新到仓库"><a href="#提交更新到仓库" class="headerlink" title="提交更新到仓库"></a>提交更新到仓库</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> commit -m <span class="hljs-string">&#x27;备注(version)&#x27;</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">git <span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
+<h2 id="提交更新到仓库"><a href="#提交更新到仓库" class="headerlink" title="提交更新到仓库"></a>提交更新到仓库</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> commit -m <span class="hljs-string">&#x27;备注(version)&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">git <span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/640.png" srcset="/img/loading.gif" lazyload alt="图片"></p>
-</li>
-<li><h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2></li>
-</ul>
-<p>要从Git的暂存区和仓库中移除一个文件，有两种情况：</p>
+<h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><p>要从Git的暂存区和仓库中移除一个文件，有两种情况：</p>
 <ul>
 <li>从暂存区删除，并且从工作目录删除源文件：</li>
 </ul>
@@ -343,13 +332,14 @@
 
 
 
-<ul>
-<li><h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard ID</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><h2 id="变动文件返回原始状态"><a href="#变动文件返回原始状态" class="headerlink" title="变动文件返回原始状态"></a>变动文件返回原始状态</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">git checkout <span class="hljs-comment">-- 文件名</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><h2 id="缓存区转换为工作区"><a href="#缓存区转换为工作区" class="headerlink" title="缓存区转换为工作区"></a>缓存区转换为工作区</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git <span class="hljs-built_in">reset</span> HEAD 文件名<br></code></pre></td></tr></table></figure></li>
-</ul>
+<h2 id="回滚"><a href="#回滚" class="headerlink" title="回滚"></a>回滚</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard ID</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="变动文件返回原始状态"><a href="#变动文件返回原始状态" class="headerlink" title="变动文件返回原始状态"></a>变动文件返回原始状态</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">git checkout <span class="hljs-comment">-- 文件名</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="缓存区转换为工作区"><a href="#缓存区转换为工作区" class="headerlink" title="缓存区转换为工作区"></a>缓存区转换为工作区</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git <span class="hljs-built_in">reset</span> HEAD 文件名<br></code></pre></td></tr></table></figure>
+
+
+
 <p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20231010164626881.png" srcset="/img/loading.gif" lazyload alt="image-20231010164626881"></p>
 <h1 id="2-git进阶"><a href="#2-git进阶" class="headerlink" title="2 git进阶"></a>2 git进阶</h1><h2 id="2-1-枝干概念"><a href="#2-1-枝干概念" class="headerlink" title="2.1 枝干概念"></a>2.1 枝干概念</h2><ul>
 <li><p>查看枝干</p>
@@ -395,8 +385,7 @@
 <h3 id="2-3-3-拉取操作"><a href="#2-3-3-拉取操作" class="headerlink" title="2.3.3 拉取操作"></a>2.3.3 拉取操作</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">git pull &lt;远程库地址名&gt; &lt;远程分支名称&gt;<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20240105142731370.png" srcset="/img/loading.gif" lazyload alt="image-20240105142731370"></p>
-<p>2.3.4 推送操作</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">git push &lt;远程库地址/别名&gt; &lt;要推送信息的分支(本地)&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="2-3-4-推送操作"><a href="#2-3-4-推送操作" class="headerlink" title="2.3.4 推送操作"></a>2.3.4 推送操作</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">git push &lt;远程库地址/别名&gt; &lt;要推送信息的分支(本地)&gt;<br></code></pre></td></tr></table></figure>
 
 <p>在本地创建一个文件然后提交更新 </p>
 <p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/img/image-20240105143029147.png" srcset="/img/loading.gif" lazyload alt="image-20240105143029147"></p>
