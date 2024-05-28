@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>ubuntu22 配置Samba服务</title>
+    <link href="/2024/05/13/ubuntu22-%E9%85%8D%E7%BD%AESamba%E6%9C%8D%E5%8A%A1/"/>
+    <url>/2024/05/13/ubuntu22-%E9%85%8D%E7%BD%AESamba%E6%9C%8D%E5%8A%A1/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p><strong>安装Samba</strong>：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake">sudo apt update<br>sudo apt <span class="hljs-keyword">install</span> samba<br></code></pre></td></tr></table></figure></li><li><p><strong>配置Samba</strong>：</p><p>创建一个新的Samba配置文件，编辑它以配置共享。</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo vim <span class="hljs-regexp">/etc/</span>samba/smb.conf<br></code></pre></td></tr></table></figure><p>在文件的底部添加以下内容：</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">[<span class="hljs-keyword">share</span>]<br>    <span class="hljs-type">path</span> = /srv/<span class="hljs-keyword">share</span><br>    browsable = yes<br>    writable = yes<br>    guest ok = <span class="hljs-keyword">no</span><br>    <span class="hljs-keyword">read</span> <span class="hljs-keyword">only</span> = <span class="hljs-keyword">no</span><br>    <span class="hljs-keyword">create</span> mask = <span class="hljs-number">0777</span><br>    directory mask = <span class="hljs-number">0777</span><br>    <span class="hljs-keyword">valid</span> users = root<br></code></pre></td></tr></table></figure><p>这将创建一个名为”share”的共享文件夹，设置为可写，并只允许用户”root”访问。</p><p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/ubuntu_typora_img/image-20240514095748001.png" alt="image-20240514095748001"></p></li><li><p><strong>设置Samba密码</strong>：</p><p>为Samba用户”root”设置密码：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo smbpasswd -<span class="hljs-selector-tag">a</span> root<br></code></pre></td></tr></table></figure></li><li><p><strong>重启Samba服务</strong>：</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo service smbd restart</span><br></code></pre></td></tr></table></figure></li></ol><p>检查</p><ol><li><p><strong>Samba服务是否正在运行？</strong>：确保Samba服务正在后台运行。你可以通过以下命令检查：</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo service smbd status</span><br></code></pre></td></tr></table></figure><p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/ubuntu_typora_img/image-20240514100358803.png" alt="image-20240514100358803"></p><p>如果服务没有运行，你可以使用以下命令启动它：</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">sudo service smbd <span class="hljs-literal">start</span><br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>计算机网络：自顶向下</title>
     <link href="/2024/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%9A%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/"/>
     <url>/2024/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%9A%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B/</url>
