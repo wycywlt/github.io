@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>jupyter操作热键</title>
+    <link href="/2024/07/29/jupyter%E6%93%8D%E4%BD%9C%E7%83%AD%E9%94%AE/"/>
+    <url>/2024/07/29/jupyter%E6%93%8D%E4%BD%9C%E7%83%AD%E9%94%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-输入类"><a href="#1-输入类" class="headerlink" title="1 输入类"></a>1 输入类</h1><p>很多情况下，我们针对同一个单元格内的代码，要修改的地方比较多的话，就可以配合<code>jupyter</code>中的多光标模式，譬如按住<code>ctrl</code>键点击不同的地方：</p><p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/ubuntu_typora_img/994f33e9g00sca27j001yd200kq00cag00it00b5.gif" alt="img"></p><p>或者按住<code>alt</code>迅速矩形选择（会按照每行相同字符数进行选择）：</p><p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/ubuntu_typora_img/7fb3fa26g00sca27k005hd200kq00cag00it00b5.gif" alt="img"></p><h1 id="2-功能类"><a href="#2-功能类" class="headerlink" title="2 功能类"></a>2 功能类</h1><h4 id="鼠标点击函数，然后-shift-tab，-也可以两次shift-tab"><a href="#鼠标点击函数，然后-shift-tab，-也可以两次shift-tab" class="headerlink" title="鼠标点击函数，然后 shift + tab， 也可以两次shift + tab"></a>鼠标点击函数，然后 shift + tab， 也可以两次shift + tab</h4><p>​       右上角有三个 小符号，可以分别点击试一下</p><p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/ubuntu_typora_img/c673f5aaec104396a0b37398510cefd1.png" alt="img"></p><p><img src="https://aliyun-picgo-img.oss-cn-hangzhou.aliyuncs.com/ubuntu_typora_img/58fec613e9454fc58bce46501165b7e8.png" alt="img"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ubuntu22 配置Samba服务</title>
     <link href="/2024/05/13/ubuntu22-%E9%85%8D%E7%BD%AESamba%E6%9C%8D%E5%8A%A1/"/>
     <url>/2024/05/13/ubuntu22-%E9%85%8D%E7%BD%AESamba%E6%9C%8D%E5%8A%A1/</url>
